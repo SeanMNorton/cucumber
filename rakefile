@@ -1,0 +1,15 @@
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
+
+Cucumber::Rake::Task.new(:ci_features) do |t|
+  t.cucumber_opts = "--profile ci_features" 
+end
+
+Cucumber::Rake::Task.new(:all_features) do |t|
+  t.cucumber_opts = "--profile default"
+end
+
+Cucumber::Rake::Task.new(:wip_features) do |t|
+  t.cucumber_opts = "--format pretty --tags @wip"
+end

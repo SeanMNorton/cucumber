@@ -1,0 +1,3 @@
+default: --format pretty --no-source
+all_features: --format html --out report.html --no-source
+ci_features:  --format html --out report.html --no-source --tags 'not @wip'
